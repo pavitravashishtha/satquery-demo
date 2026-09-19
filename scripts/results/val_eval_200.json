@@ -1,0 +1,2077 @@
+{
+  "metadata": {
+    "split": "Val",
+    "samples_evaluated": 200,
+    "skipped_images": 0,
+    "image_size": [
+      128,
+      128
+    ],
+    "overall_accuracy_substring": 72.5,
+    "overall_accuracy_exact": 69.0,
+    "subset_majority_baseline": 50.5,
+    "full_split_majority_baseline": 50.99446505687002,
+    "delta_vs_subset_majority": 22.0,
+    "delta_vs_full_majority": 21.50553494312998
+  },
+  "per_question_type": {
+    "change_or_not": {
+      "count": 77,
+      "substring_accuracy": 88.31168831168831,
+      "exact_accuracy": 88.31168831168831,
+      "majority_answer": "yes",
+      "majority_baseline": 53.246753246753244
+    },
+    "change_ratio": {
+      "count": 10,
+      "substring_accuracy": 20.0,
+      "exact_accuracy": 20.0,
+      "majority_answer": "10_to_20",
+      "majority_baseline": 20.0
+    },
+    "change_ratio_types": {
+      "count": 23,
+      "substring_accuracy": 95.65217391304348,
+      "exact_accuracy": 65.21739130434783,
+      "majority_answer": "0",
+      "majority_baseline": 47.82608695652174
+    },
+    "change_to_what": {
+      "count": 15,
+      "substring_accuracy": 40.0,
+      "exact_accuracy": 40.0,
+      "majority_answer": "buildings",
+      "majority_baseline": 40.0
+    },
+    "decrease_or_not": {
+      "count": 23,
+      "substring_accuracy": 78.26086956521739,
+      "exact_accuracy": 78.26086956521739,
+      "majority_answer": "no",
+      "majority_baseline": 78.26086956521739
+    },
+    "increase_or_not": {
+      "count": 22,
+      "substring_accuracy": 59.09090909090909,
+      "exact_accuracy": 59.09090909090909,
+      "majority_answer": "no",
+      "majority_baseline": 54.54545454545454
+    },
+    "largest_change": {
+      "count": 15,
+      "substring_accuracy": 66.66666666666666,
+      "exact_accuracy": 66.66666666666666,
+      "majority_answer": "buildings",
+      "majority_baseline": 46.666666666666664
+    },
+    "smallest_change": {
+      "count": 15,
+      "substring_accuracy": 40.0,
+      "exact_accuracy": 40.0,
+      "majority_answer": "trees",
+      "majority_baseline": 26.666666666666668
+    }
+  },
+  "predictions": [
+    {
+      "idx": 0,
+      "question": "Did the areas of non-vegetated ground surface change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 1,
+      "question": "Have the areas of trees changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 2,
+      "question": "Have the areas of low vegetation changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 3,
+      "question": "Have the regions of water changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 4,
+      "question": "Have the regions of buildings changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 5,
+      "question": "Have the areas of playgrounds changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 6,
+      "question": "Did the regions of non-vegetated ground surface change in the pre-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 7,
+      "question": "Have the areas of trees changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 8,
+      "question": "Have the regions of water changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 9,
+      "question": "Did the regions of buildings change in the pre-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 10,
+      "question": "Did the areas of playgrounds change in the pre-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 11,
+      "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 12,
+      "question": "Have the areas of trees changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 13,
+      "question": "Did the areas of water change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 14,
+      "question": "Did the areas of buildings change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 15,
+      "question": "Have the regions of playgrounds changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 16,
+      "question": "Did the regions of non-vegetated ground surface increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 17,
+      "question": "Have the regions of water increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 18,
+      "question": "Have the areas of buildings increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 19,
+      "question": "Did the areas of non-vegetated ground surface decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 20,
+      "question": "Did the regions of trees decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 21,
+      "question": "Did the areas of low vegetation decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 22,
+      "question": "Have the areas of water decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 23,
+      "question": "Did the regions of playgrounds decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 24,
+      "question": "What type of change is the smallest?",
+      "question_type": "smallest_change",
+      "ground_truth": "trees",
+      "prediction": "trees",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 25,
+      "question": "What is the largest change?",
+      "question_type": "largest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 26,
+      "question": "What is the smallest change in the pre-change image?",
+      "question_type": "smallest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 27,
+      "question": "What type of change is the smallest in the post-event image?",
+      "question_type": "smallest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "low_vegetation",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 28,
+      "question": "What is the largest change in the pre-change image?",
+      "question_type": "largest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "low_vegetation",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 29,
+      "question": "What is the largest change in the post-event image?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 30,
+      "question": "What have the regions of non-vegetated ground surface in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 31,
+      "question": "What have the areas of low vegetation in the pre-change image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 32,
+      "question": "What have the areas of buildings in the first image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 33,
+      "question": "What is the percentage of changed areas?",
+      "question_type": "change_ratio",
+      "ground_truth": "30_to_40",
+      "prediction": "10_to_20",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 34,
+      "question": "How much of the area has not changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "60_to_70",
+      "prediction": "80_to_90",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 35,
+      "question": "What is the change ratio of low vegetation in the pre-event image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "20_to_30",
+      "prediction": "0_to_10",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 36,
+      "question": "How much area of low vegetation has changed in the post-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 37,
+      "question": "What is the change ratio of water in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "02180.png"
+    },
+    {
+      "idx": 38,
+      "question": "Did the regions of non-vegetated ground surface change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 39,
+      "question": "Did the regions of trees change?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 40,
+      "question": "Did the areas of low vegetation change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 41,
+      "question": "Did the regions of water change?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 42,
+      "question": "Have the regions of buildings changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 43,
+      "question": "Have the areas of playgrounds changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 44,
+      "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 45,
+      "question": "Have the regions of trees changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 46,
+      "question": "Have the areas of low vegetation changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 47,
+      "question": "Have the areas of water changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 48,
+      "question": "Did the areas of playgrounds change in the pre-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 49,
+      "question": "Did the areas of non-vegetated ground surface change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 50,
+      "question": "Did the regions of trees change in the post-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 51,
+      "question": "Have the areas of low vegetation changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 52,
+      "question": "Have the regions of water changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 53,
+      "question": "Did the regions of buildings change in the post-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 54,
+      "question": "Have the areas of playgrounds changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 55,
+      "question": "Did the areas of non-vegetated ground surface increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 56,
+      "question": "Did the regions of trees increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 57,
+      "question": "Did the areas of low vegetation increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 58,
+      "question": "Have the areas of buildings increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 59,
+      "question": "Did the areas of playgrounds increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 60,
+      "question": "Did the regions of non-vegetated ground surface decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 61,
+      "question": "Have the areas of trees decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 62,
+      "question": "Did the regions of low vegetation decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 63,
+      "question": "Did the regions of water decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 64,
+      "question": "Have the regions of buildings decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 65,
+      "question": "Did the regions of playgrounds decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 66,
+      "question": "What type of change is the smallest?",
+      "question_type": "smallest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "trees",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 67,
+      "question": "What type of change is the largest?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 68,
+      "question": "What is the smallest change in the pre-change image?",
+      "question_type": "smallest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 69,
+      "question": "What type of change is the smallest in the post-change image?",
+      "question_type": "smallest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "low_vegetation",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 70,
+      "question": "What is the largest change in the pre-event image?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "low_vegetation",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 71,
+      "question": "What type of change is the largest in the second image?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 72,
+      "question": "What have the regions of non-vegetated ground surface in the pre-change image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "low_vegetation",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 73,
+      "question": "What have the regions of low vegetation in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 74,
+      "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 75,
+      "question": "How much of the area has changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "10_to_20",
+      "prediction": "0_to_10",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 76,
+      "question": "What is the percentage of unchanged areas?",
+      "question_type": "change_ratio",
+      "ground_truth": "80_to_90",
+      "prediction": "90_to_100",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 77,
+      "question": "What is the change ratio of non-vegetated ground surface in the pre-event image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 78,
+      "question": "What is the change percentage of water in the first image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 79,
+      "question": "What is the change proportion of buildings in the first image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 80,
+      "question": "How much area of non-vegetated ground surface has changed in the post-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 81,
+      "question": "What is the change percentage of trees in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 82,
+      "question": "How much area of buildings has changed in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 83,
+      "question": "What is the change proportion of playgrounds in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "07502.png"
+    },
+    {
+      "idx": 84,
+      "question": "Have the regions of trees changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 85,
+      "question": "Did the areas of low vegetation change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 86,
+      "question": "Did the regions of water change?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 87,
+      "question": "Did the regions of buildings change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 88,
+      "question": "Have the areas of non-vegetated ground surface changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 89,
+      "question": "Did the regions of trees change in the pre-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 90,
+      "question": "Did the regions of low vegetation change in the pre-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 91,
+      "question": "Have the regions of water changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 92,
+      "question": "Have the areas of buildings changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 93,
+      "question": "Did the areas of playgrounds change in the pre-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 94,
+      "question": "Have the regions of non-vegetated ground surface changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 95,
+      "question": "Did the areas of trees change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 96,
+      "question": "Have the regions of low vegetation changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 97,
+      "question": "Did the regions of water change in the post-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 98,
+      "question": "Have the regions of playgrounds changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 99,
+      "question": "Did the regions of trees increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 100,
+      "question": "Have the regions of low vegetation increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 101,
+      "question": "Have the regions of buildings increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 102,
+      "question": "Have the areas of playgrounds increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 103,
+      "question": "Have the regions of trees decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 104,
+      "question": "Have the areas of water decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 105,
+      "question": "Did the areas of buildings decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 106,
+      "question": "What is the smallest change?",
+      "question_type": "smallest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "trees",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 107,
+      "question": "What is the largest change?",
+      "question_type": "largest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 108,
+      "question": "What is the smallest change in the pre-event image?",
+      "question_type": "smallest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 109,
+      "question": "What is the smallest change in the second image?",
+      "question_type": "smallest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 110,
+      "question": "What is the largest change in the pre-event image?",
+      "question_type": "largest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 111,
+      "question": "What is the largest change in the second image?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 112,
+      "question": "What have the areas of non-vegetated ground surface in the first image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 113,
+      "question": "What have the areas of buildings in the first image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "low_vegetation",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 114,
+      "question": "How much of the area has changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "20_to_30",
+      "prediction": "10_to_20",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 115,
+      "question": "What is the non-change ratio of the imagery?",
+      "question_type": "change_ratio",
+      "ground_truth": "70_to_80",
+      "prediction": "80_to_90",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 116,
+      "question": "What is the change percentage of low vegetation in the first image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 117,
+      "question": "What is the change ratio of non-vegetated ground surface in the post-event image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 118,
+      "question": "How much area of trees has changed in the post-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 119,
+      "question": "How much area of low vegetation has changed in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "09380.png"
+    },
+    {
+      "idx": 120,
+      "question": "Have the regions of non-vegetated ground surface changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 121,
+      "question": "Did the regions of trees change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 122,
+      "question": "Did the regions of buildings change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 123,
+      "question": "Have the regions of non-vegetated ground surface changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 124,
+      "question": "Have the areas of low vegetation changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 125,
+      "question": "Have the regions of buildings changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 126,
+      "question": "Have the areas of playgrounds changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 127,
+      "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 128,
+      "question": "Have the regions of low vegetation changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 129,
+      "question": "Did the regions of buildings change in the post-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 130,
+      "question": "Did the areas of playgrounds change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 131,
+      "question": "Did the regions of trees increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 132,
+      "question": "Did the areas of low vegetation increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 133,
+      "question": "Did the regions of buildings increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 134,
+      "question": "Did the areas of playgrounds increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 135,
+      "question": "Did the areas of non-vegetated ground surface decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 136,
+      "question": "Have the regions of trees decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 137,
+      "question": "Did the regions of low vegetation decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 138,
+      "question": "Did the regions of water decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 139,
+      "question": "Did the areas of playgrounds decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 140,
+      "question": "What is the smallest change?",
+      "question_type": "smallest_change",
+      "ground_truth": "water",
+      "prediction": "trees",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 141,
+      "question": "What is the largest change?",
+      "question_type": "largest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "low_vegetation",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 142,
+      "question": "What type of change is the smallest in the pre-event image?",
+      "question_type": "smallest_change",
+      "ground_truth": "trees",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 143,
+      "question": "What is the smallest change in the second image?",
+      "question_type": "smallest_change",
+      "ground_truth": "water",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 144,
+      "question": "What is the largest change in the first image?",
+      "question_type": "largest_change",
+      "ground_truth": "NVG_surface",
+      "prediction": "low_vegetation",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 145,
+      "question": "What is the largest change in the second image?",
+      "question_type": "largest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 146,
+      "question": "What have the regions of non-vegetated ground surface in the pre-change image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "low_vegetation",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 147,
+      "question": "What have the areas of trees in the first image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "NVG_surface",
+      "prediction": "NVG_surface",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 148,
+      "question": "What have the regions of low vegetation in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "trees",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 149,
+      "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "low_vegetation",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 150,
+      "question": "How much of the area has changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "10_to_20",
+      "prediction": "0_to_10",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 151,
+      "question": "How much of the area has not changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "80_to_90",
+      "prediction": "90_to_100",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 152,
+      "question": "What is the change ratio of non-vegetated ground surface in the first image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 153,
+      "question": "How much area of water has changed in the pre-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 154,
+      "question": "What is the change ratio of buildings in the first image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 155,
+      "question": "What is the change ratio of non-vegetated ground surface in the post-event image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 156,
+      "question": "How much area of low vegetation has changed in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 157,
+      "question": "What is the change percentage of buildings in the second image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 158,
+      "question": "How much area of playgrounds has changed in the post-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "00587.png"
+    },
+    {
+      "idx": 159,
+      "question": "Did the regions of non-vegetated ground surface change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 160,
+      "question": "Have the regions of trees changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 161,
+      "question": "Did the areas of low vegetation change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 162,
+      "question": "Have the areas of water changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 163,
+      "question": "Did the areas of buildings change?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 164,
+      "question": "Have the areas of playgrounds changed?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 165,
+      "question": "Have the regions of non-vegetated ground surface changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 166,
+      "question": "Did the regions of trees change in the pre-event image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 167,
+      "question": "Did the areas of low vegetation change in the pre-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 168,
+      "question": "Have the regions of water changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 169,
+      "question": "Have the areas of buildings changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 170,
+      "question": "Have the regions of playgrounds changed in the first image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 171,
+      "question": "Have the areas of non-vegetated ground surface changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 172,
+      "question": "Have the areas of trees changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 173,
+      "question": "Have the regions of low vegetation changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 174,
+      "question": "Have the regions of water changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 175,
+      "question": "Did the areas of buildings change in the post-change image?",
+      "question_type": "change_or_not",
+      "ground_truth": "yes",
+      "prediction": "yes",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 176,
+      "question": "Have the regions of playgrounds changed in the second image?",
+      "question_type": "change_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 177,
+      "question": "Have the regions of non-vegetated ground surface increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 178,
+      "question": "Have the areas of trees increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "yes",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 179,
+      "question": "Did the regions of low vegetation increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 180,
+      "question": "Did the areas of water increase?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 181,
+      "question": "Have the areas of buildings increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 182,
+      "question": "Have the regions of playgrounds increased?",
+      "question_type": "increase_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 183,
+      "question": "Did the regions of non-vegetated ground surface decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 184,
+      "question": "Did the regions of trees decrease?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "yes",
+      "prediction": "no",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 185,
+      "question": "Have the regions of low vegetation decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 186,
+      "question": "Have the regions of water decreased?",
+      "question_type": "decrease_or_not",
+      "ground_truth": "no",
+      "prediction": "no",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 187,
+      "question": "What is the smallest change?",
+      "question_type": "smallest_change",
+      "ground_truth": "trees",
+      "prediction": "trees",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 188,
+      "question": "What is the largest change?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 189,
+      "question": "What type of change is the smallest in the pre-event image?",
+      "question_type": "smallest_change",
+      "ground_truth": "trees",
+      "prediction": "buildings",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 190,
+      "question": "What is the smallest change in the post-change image?",
+      "question_type": "smallest_change",
+      "ground_truth": "buildings",
+      "prediction": "buildings",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 191,
+      "question": "What is the largest change in the pre-event image?",
+      "question_type": "largest_change",
+      "ground_truth": "buildings",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 192,
+      "question": "What is the largest change in the post-change image?",
+      "question_type": "largest_change",
+      "ground_truth": "low_vegetation",
+      "prediction": "low_vegetation",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 193,
+      "question": "What have the areas of non-vegetated ground surface in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "low_vegetation",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 194,
+      "question": "What have the regions of trees in the first image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "buildings",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 195,
+      "question": "What have the areas of buildings in the pre-event image mainly changed to?",
+      "question_type": "change_to_what",
+      "ground_truth": "low_vegetation",
+      "prediction": "NVG_surface",
+      "match_substr": false,
+      "match_exact": false,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 196,
+      "question": "How much of the area has changed?",
+      "question_type": "change_ratio",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 197,
+      "question": "What is the percentage of unchanged areas?",
+      "question_type": "change_ratio",
+      "ground_truth": "90_to_100",
+      "prediction": "90_to_100",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 198,
+      "question": "What is the change ratio of non-vegetated ground surface in the pre-change image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0_to_10",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": true,
+      "file_name": "01417.png"
+    },
+    {
+      "idx": 199,
+      "question": "What is the change ratio of water in the pre-event image?",
+      "question_type": "change_ratio_types",
+      "ground_truth": "0",
+      "prediction": "0_to_10",
+      "match_substr": true,
+      "match_exact": false,
+      "file_name": "01417.png"
+    }
+  ]
+}

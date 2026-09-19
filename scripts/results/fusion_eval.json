@@ -1,0 +1,183 @@
+{
+  "summary": {
+    "samples_evaluated": 40,
+    "threshold": 0.5,
+    "macro_f1": 0.3125,
+    "macro_precision": 0.4188,
+    "macro_recall": 0.2675,
+    "mean_accuracy": 0.9092
+  },
+  "per_class": {
+    "Urban fabric": {
+      "support": 3,
+      "precision": 0.6667,
+      "recall": 0.6667,
+      "f1": 0.6667,
+      "accuracy": 0.95,
+      "majority_baseline": 0.925,
+      "status": "Rare Class (<15)"
+    },
+    "Industrial or commercial units": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.975,
+      "majority_baseline": 1.0,
+      "status": "Rare Class (<15)"
+    },
+    "Arable land": {
+      "support": 11,
+      "precision": 0.8889,
+      "recall": 0.7273,
+      "f1": 0.8,
+      "accuracy": 0.9,
+      "majority_baseline": 0.725,
+      "status": "Rare Class (<15)"
+    },
+    "Permanent crops": {
+      "support": 3,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.925,
+      "majority_baseline": 0.925,
+      "status": "Rare Class (<15)"
+    },
+    "Pastures": {
+      "support": 5,
+      "precision": 0.5,
+      "recall": 0.4,
+      "f1": 0.4444,
+      "accuracy": 0.875,
+      "majority_baseline": 0.875,
+      "status": "Rare Class (<15)"
+    },
+    "Complex cultivation patterns": {
+      "support": 9,
+      "precision": 0.5,
+      "recall": 0.2222,
+      "f1": 0.3077,
+      "accuracy": 0.775,
+      "majority_baseline": 0.775,
+      "status": "Rare Class (<15)"
+    },
+    "Land principally occupied by agriculture, with significant areas of natural vegetation": {
+      "support": 13,
+      "precision": 0.6667,
+      "recall": 0.3077,
+      "f1": 0.4211,
+      "accuracy": 0.725,
+      "majority_baseline": 0.675,
+      "status": "Rare Class (<15)"
+    },
+    "Agro-forestry areas": {
+      "support": 3,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "accuracy": 0.95,
+      "majority_baseline": 0.925,
+      "status": "Rare Class (<15)"
+    },
+    "Broad-leaved forest": {
+      "support": 14,
+      "precision": 1.0,
+      "recall": 0.4286,
+      "f1": 0.6,
+      "accuracy": 0.8,
+      "majority_baseline": 0.65,
+      "status": "Rare Class (<15)"
+    },
+    "Coniferous forest": {
+      "support": 22,
+      "precision": 0.8182,
+      "recall": 0.8182,
+      "f1": 0.8182,
+      "accuracy": 0.8,
+      "majority_baseline": 0.55,
+      "status": "OK"
+    },
+    "Mixed forest": {
+      "support": 26,
+      "precision": 0.9167,
+      "recall": 0.8462,
+      "f1": 0.88,
+      "accuracy": 0.85,
+      "majority_baseline": 0.65,
+      "status": "OK"
+    },
+    "Natural grassland and sparsely vegetated areas": {
+      "support": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.975,
+      "majority_baseline": 0.975,
+      "status": "Rare Class (<15)"
+    },
+    "Moors, heathland and sclerophyllous vegetation": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.975,
+      "majority_baseline": 1.0,
+      "status": "Rare Class (<15)"
+    },
+    "Transitional woodland, shrub": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 1.0,
+      "majority_baseline": 1.0,
+      "status": "Rare Class (<15)"
+    },
+    "Beaches, dunes, sands": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 1.0,
+      "majority_baseline": 1.0,
+      "status": "Rare Class (<15)"
+    },
+    "Inland wetlands": {
+      "support": 0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 1.0,
+      "majority_baseline": 1.0,
+      "status": "Rare Class (<15)"
+    },
+    "Coastal wetlands": {
+      "support": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.975,
+      "majority_baseline": 0.975,
+      "status": "Rare Class (<15)"
+    },
+    "Inland waters": {
+      "support": 9,
+      "precision": 1.0,
+      "recall": 0.3333,
+      "f1": 0.5,
+      "accuracy": 0.85,
+      "majority_baseline": 0.775,
+      "status": "Rare Class (<15)"
+    },
+    "Marine waters": {
+      "support": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "accuracy": 0.975,
+      "majority_baseline": 0.975,
+      "status": "Rare Class (<15)"
+    }
+  }
+}

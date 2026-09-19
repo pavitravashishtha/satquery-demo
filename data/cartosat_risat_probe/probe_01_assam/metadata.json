@@ -1,0 +1,25 @@
+{
+  "sample_id": "probe_01_assam",
+  "site_name": "Brahmaputra Basin, Assam",
+  "coordinates": {
+    "lat": 26.185,
+    "lon": 91.745
+  },
+  "bbox": [
+    91.715,
+    26.155,
+    91.775,
+    26.215
+  ],
+  "domain": "riverine_wetland_flood",
+  "is_proxy": true,
+  "optical_sensor": "ESRI World Imagery High-Res (Proxy for Cartosat-2S sub-meter optical)",
+  "sar_sensor": "Sentinel-1 / Calibrated C-band (Proxy for RISAT-1 C-band SAR)",
+  "proxy_rationale": "Real ISRO Cartosat-2S and RISAT data was inaccessible without institutional credentials from Bhoonidhi/Bhuvan.",
+  "vqa_question": "What is the dominant geographic feature and land cover in this scene?",
+  "ground_truth_vqa": "river and floodplain wetland",
+  "ground_truth_fusion": [
+    "Inland wetlands",
+    "Inland waters"
+  ]
+}

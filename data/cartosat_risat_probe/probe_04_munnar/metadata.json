@@ -1,0 +1,25 @@
+{
+  "sample_id": "probe_04_munnar",
+  "site_name": "Munnar, Western Ghats, Kerala",
+  "coordinates": {
+    "lat": 10.0889,
+    "lon": 77.0595
+  },
+  "bbox": [
+    77.0295,
+    10.0589,
+    77.0895,
+    10.1189
+  ],
+  "domain": "mountainous_forest_terrain",
+  "is_proxy": true,
+  "optical_sensor": "ESRI World Imagery High-Res (Proxy for Cartosat-2S sub-meter optical)",
+  "sar_sensor": "Sentinel-1 / Calibrated C-band (Proxy for RISAT-1 C-band SAR)",
+  "proxy_rationale": "Real ISRO Cartosat-2S and RISAT data was inaccessible without institutional credentials from Bhoonidhi/Bhuvan.",
+  "vqa_question": "What is the dominant geographic feature and land cover in this scene?",
+  "ground_truth_vqa": "mountainous forest and vegetation",
+  "ground_truth_fusion": [
+    "Broad-leaved forest",
+    "Complex cultivation patterns"
+  ]
+}

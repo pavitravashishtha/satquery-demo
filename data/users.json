@@ -1,0 +1,79 @@
+{
+  "priya": {
+    "id": "priya",
+    "name": "Priya Menon",
+    "email": "priya@example.com",
+    "role": "Senior Geospatial Analyst",
+    "organization": "National Remote Sensing Centre (NRSC)",
+    "plan": "Pro Tier",
+    "avatar": "P",
+    "avatar_bg": "linear-gradient(135deg, #184e42, #73cfb3)",
+    "api_key": "sq_live_9a87f12e4b3c7d6e",
+    "queries_limit": 500,
+    "queries_used": 42,
+    "specialists_unlocked": [
+      "general_vlm",
+      "qwen_cdvqa",
+      "fusion"
+    ],
+    "created_at": "2026-01-15T09:30:00Z"
+  },
+  "aris": {
+    "id": "aris",
+    "name": "Dr. Aris Thorne",
+    "email": "aris@satquery.ai",
+    "role": "Lead Remote Sensing Scientist",
+    "organization": "Global Earth Observatory",
+    "plan": "Enterprise Tier",
+    "avatar": "D",
+    "avatar_bg": "linear-gradient(135deg, #2b3a67, #496a81)",
+    "api_key": "sq_live_8e9de0138400fa4222d87748",
+    "queries_limit": 2500,
+    "queries_used": 184,
+    "specialists_unlocked": [
+      "general_vlm",
+      "qwen_cdvqa",
+      "fusion",
+      "custom_lora"
+    ],
+    "created_at": "2025-11-20T14:15:00Z"
+  },
+  "guest": {
+    "id": "guest",
+    "name": "Guest Analyst",
+    "email": "guest@satquery.ai",
+    "role": "Public Observer",
+    "organization": "Open Research Community",
+    "plan": "Free Tier",
+    "avatar": "G",
+    "avatar_bg": "linear-gradient(135deg, #5c6b73, #9db4c0)",
+    "api_key": "sq_live_guest_demo_key_771",
+    "queries_limit": 50,
+    "queries_used": 12,
+    "specialists_unlocked": [
+      "general_vlm",
+      "qwen_cdvqa",
+      "fusion"
+    ],
+    "created_at": "2026-09-01T00:00:00Z"
+  },
+  "user_caa5d2ba": {
+    "id": "user_caa5d2ba",
+    "name": "Priya",
+    "email": "priya@nrsc.gov.in",
+    "role": "Field Analyst",
+    "organization": "Independent Research",
+    "plan": "Free Tier",
+    "avatar": "P",
+    "avatar_bg": "linear-gradient(135deg, #244452, #52796f)",
+    "api_key": "sq_live_fc18dc0d0b8c2dbb",
+    "queries_limit": 100,
+    "queries_used": 0,
+    "specialists_unlocked": [
+      "general_vlm",
+      "qwen_cdvqa",
+      "fusion"
+    ],
+    "created_at": "2026-09-11T08:58:26Z"
+  }
+}

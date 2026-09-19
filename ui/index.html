@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>SatQueryAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=6003" />
+  </head>
+  <body>
+    <!-- Pre-Site Intro Video Overlay -->
+    <div class="intro-video-overlay" id="intro-video-overlay">
+      <div class="intro-video-wrap">
+        <video id="intro-video" src="preview/Untitled%20design%20(8)(1).mp4" playsinline autoplay muted preload="auto"></video>
+        <div class="intro-branding">
+          <span class="planet">◒</span> SatQueryAI
+        </div>
+        <div class="intro-controls">
+          <button class="intro-sound-btn" id="intro-sound-btn" title="Toggle Sound">🔇 <span>Sound</span></button>
+          <button class="intro-skip-btn" id="intro-skip-btn">Skip Intro <span>›</span></button>
+        </div>
+      </div>
+    </div>
+
+    <main class="app-shell">
+      <div class="video-frame" id="video-frame">
+        <canvas id="hero-canvas" class="hero-video"></canvas>
+        <video id="workspace-bg-video" class="hero-video bg-video-element" src="last%20video/Untitled%20design%20(7).mp4" loop muted playsinline preload="auto" style="display:none; position:absolute; inset:0; width:100%; height:100%; object-fit:cover;"></video>
+        <div class="atmosphere"></div>
+        <div class="vignette"></div>
+        <div class="watermark-cover"></div>
+        <div class="grain"></div>
+      </div>
+      <header class="navigation landing-nav">
+        <a class="brand" href="#landing"><span class="planet">◒</span> SatQueryAI</a>
+        <div class="edge-status-pill" id="landing-edge-pill">
+          <span class="pulse-dot"></span>
+          <span class="pill-text">Cloud Preview · Edge Target: RTX 4050 (6GB)</span>
+          <a href="https://youtu.be/demo-link-placeholder" target="_blank" class="watch-video-btn" id="landing-video-btn" title="Watch 2-Min Edge GPU Video">▶ Video Demo</a>
+        </div>
+        <div class="nav-auth-wrap" style="display:flex; align-items:center; gap:10px;">
+          <button class="button outline" id="open-auth-btn"><span class="avatar-mini user-avatar-target">P</span> <span class="nav-auth-text">Sign In</span></button>
+          <button class="button mint start-query">Get Started</button>
+        </div>
+      </header>
+
+      <div class="continuous-experience" id="continuous-experience">
+        <!-- Section 1: Cinematic Story Panels -->
+        <section class="cinematic-hero" id="landing">
+          <div class="story-panels">
+            <article class="story-panel opening-panel">
+              <p class="eyebrow">SATELLITE INTELLIGENCE</p>
+              <h1><span class="heading-line">Satellites see everything.</span><br /><span class="heading-line highlight">Now you can ask it anything.</span></h1>
+              <p class="hero-copy">Turn satellite imagery into clear, real-world insight with AI.</p>
+              <div class="hero-actions">
+                <button class="button mint start-query">Try Demo <b>→</b></button>
+              </div>
+            </article>
+            <article class="story-panel panel-2">
+              <p class="eyebrow">MULTI-SENSOR FUSION</p>
+              <h1>Precision Insight.</h1>
+              <p class="hero-copy">Optical and SAR sensor intelligence delivered in seconds.</p>
+            </article>
+            <article class="story-panel final-panel">
+              <p class="eyebrow">AI POWERED ANALYSIS</p>
+              <h1>Real World Answers.</h1>
+              <p class="hero-copy">Ask in plain English and receive instant visual evidence.</p>
+              <div class="hero-actions">
+                <button class="button mint start-query">Start Satellite Query <b>→</b></button>
+              </div>
+            </article>
+          </div>
+          <div class="scroll-indicator">
+            <span>SCROLL</span>
+            <i></i>
+          </div>
+        </section>
+
+        <!-- Section 2: Platform Capabilities Overlay -->
+        <section class="afterglow" id="explore">
+          <div class="afterglow-orb"></div>
+          <div class="afterglow-header">
+            <p class="eyebrow">PLATFORM CAPABILITIES</p>
+            <h2>Earth Intelligence, <em>Simplified.</em></h2>
+            <p>Transforming complex multi-sensor satellite telemetry into clear, actionable answers.</p>
+          </div>
+          <div class="feature-rail">
+            <div class="feature-card"><i>⌘</i><strong>Multi-Sensor Support</strong><span>Sentinel-2 Optical · Sentinel-1 SAR</span></div>
+            <div class="feature-card"><i>▣</i><strong>Natural Language</strong><span>Ask questions in plain English</span></div>
+            <div class="feature-card"><i>◌</i><strong>Visual Evidence</strong><span>Grad-CAM heatmaps & spatial overlays</span></div>
+            <div class="feature-card"><i>◇</i><strong>Real Impact</strong><span>Environmental, urban & flood analysis</span></div>
+          </div>
+          <div class="afterglow-cta">
+            <button class="button mint start-query">Launch Analysis Assistant <span>↗</span></button>
+          </div>
+        </section>
+
+        <!-- Section 3: Chat Assistant UI Overlay -->
+        <section class="workspace" id="workspace">
+          <aside class="side-nav">
+            <a class="brand dark" href="#landing"><span class="planet">◒</span><span>SatQueryAI<small>Ask. Analyze. Act.</small></span></a>
+            <div class="side-nav-body">
+              <nav class="chatgpt-nav"><button class="side-link" id="go-home"><span>⌂</span>Home</button><button class="side-link selected" id="new-chat"><span>＋</span>New chat</button><button class="side-link" id="open-search"><span>⌕</span>Search chats</button></nav>
+              <div class="sidebar-section"><small>RECENT</small><button class="history-item">Flood exposure - Kozhikode</button><button class="history-item">Deforestation near Munnar</button><button class="history-item">Land cover - Bengaluru</button></div>
+              <div class="sidebar-section"><small>LIBRARY</small><button class="library-item" id="open-images"><span>▧</span> Stored images <b>12</b></button><button class="library-item"><span>⌖</span> Saved locations <b>8</b></button><button class="library-item"><span>▤</span> Reports <b>5</b></button><button class="library-item" id="open-architecture-btn" style="color:#85efd0; border-top:1px solid rgba(134,241,207,0.15); margin-top:6px; padding-top:8px;"><span>⚙</span> <b>Architecture & Verification</b></button></div>
+            </div>
+            <button class="account-card" id="open-settings"><span class="account-avatar user-avatar-target">P</span><span><b class="user-name-target">Priya Menon</b><small class="user-plan-target">Pro Tier · Settings</small></span><i>›</i></button>
+          </aside>
+          <section class="query-area">
+            <div class="chat-pane" id="chat-pane">
+              <header class="work-header">
+                <div class="chat-title"><b>New conversation</b><span>Satellite analysis assistant</span></div>
+                <div class="edge-status-pill" id="work-edge-pill" style="margin-left:auto; margin-right:12px;">
+                  <span class="pulse-dot"></span>
+                  <span class="pill-text">Cloud Preview · Edge: RTX 4050 (6GB)</span>
+                  <a href="https://youtu.be/demo-link-placeholder" target="_blank" class="watch-video-btn" id="work-video-btn" title="Watch 2-Min Edge GPU Video">▶ Video Demo</a>
+                </div>
+                <div class="header-actions">
+                  <button class="button outline mini" id="toggle-artifact-pane-btn" style="display:none; font-size:11px; padding:5px 12px; gap:6px; border-color:rgba(134,241,207,0.35); color:#85efd0; border-radius:6px; background:rgba(134,241,207,0.1); cursor:pointer;"><span style="font-size:12px;">📑</span> <span>Report Dossier</span></button>
+                  <button class="avatar-pill-btn" id="header-avatar" title="Account & Preferences"><span class="avatar user-avatar-target">P</span></button>
+                </div>
+              </header>
+              <div class="chat-main"><div class="welcome" id="welcome"><div class="welcome-logo">◒</div><h1 id="welcome-heading" class="gaming-heading">What would you like to understand?</h1><p>Ask about any place on Earth. Select a real telemetry benchmark or write a custom query.</p><div class="preset-grid" id="preset-container"><button class="preset-card" data-preset="vqa"><b>🏢 Chennai Land Cover</b><span>Analyze urban land cover features</span><span class="tag">VQA · Qwen Base</span></button><button class="preset-card" data-preset="captioning"><b>📝 Aerial Scene Caption</b><span>Detailed high-res scene description</span><span class="tag">Captioning · Qwen Base</span></button><button class="preset-card" data-preset="grounding"><b>🎯 Building Grounding</b><span>Detect & localize structure boxes</span><span class="tag">Grounding · Bounding Boxes</span></button><button class="preset-card" data-preset="change_vqa"><b>🔄 Urban Expansion</b><span>Bitemporal change detection</span><span class="tag">Change VQA · CDVQA LoRA</span></button><button class="preset-card" data-preset="fusion"><b>🌊 Assam Flood Inundation</b><span>Multimodal Optical+SAR fusion</span><span class="tag">Fusion · Grad-CAM CNN</span></button><button class="preset-card" data-preset="compound"><b>⚡ Flood & Change (Compound)</b><span>Dual-specialist sequence</span><span class="tag">Compound · Fusion + Change</span></button></div><div class="suggestions"><button>Is there flood risk near this location?</button><button>Show recent land-cover changes</button><button>Is this area affected by deforestation?</button></div></div><div class="chat-thread" id="chat-thread" aria-live="polite"></div></div>
+              <div class="composer-wrap"><div class="location-row"><label for="location">⌖ &nbsp; Location <em>Required</em></label><input id="location" placeholder="Search city, district, coordinates, or place name" /><button id="locate">Use my location</button></div><div class="composer"><label class="attach" for="image-input" title="Attach image(s)"><input id="image-input" type="file" accept="image/*,.tif,.tiff" multiple hidden />＋</label><textarea id="question" maxlength="1000" placeholder="Message SatQueryAI or pick a benchmark preset above..."></textarea><button id="submit-query" class="send" title="Send message">↑</button></div><div class="attachment-status" id="attachment-status"></div><p class="composer-note">Location is required. Images are optional and support deeper visual analysis.</p></div>
+            </div>
+
+            <!-- Claude-Style Right-Side Artifact Dossier Panel -->
+            <aside class="artifact-pane" id="artifact-pane" aria-hidden="true">
+              <div class="artifact-header">
+                <div class="artifact-meta">
+                  <span class="artifact-badge" id="artifact-badge">EARTH INTELLIGENCE REPORT</span>
+                  <h3 id="artifact-title">Geospatial Intelligence Dossier</h3>
+                </div>
+                <div class="artifact-actions">
+                  <button id="artifact-copy-btn" title="Copy Assessment Text">📋</button>
+                  <button id="artifact-download-btn" title="Download Report">⇩</button>
+                  <button id="artifact-fullscreen-btn" title="Toggle Fullscreen Width">⤢</button>
+                  <button id="artifact-close-btn" title="Close Panel">✕</button>
+                </div>
+              </div>
+              <div class="artifact-body" id="artifact-body">
+                <!-- Dynamically populated with interactive visual evidence, sliders, heatmaps, and report -->
+              </div>
+            </aside>
+          </section>
+        </section>
+      </div>
+
+      <section class="result page" id="result">
+        <nav class="topbar result-nav"><a class="brand" href="#landing"><span class="planet">◒</span> SatQueryAI</a><div class="nav-links"><a>New Query</a><a>History</a><a>Datasets</a></div><span class="avatar">P</span></nav>
+        <div class="result-wrap"><button class="back" id="back-to-query">← &nbsp;Back to Query</button><div class="result-head"><h2 id="result-question">Has the water spread in this area?</h2><div class="confidence"><span>✓ &nbsp; High Confidence</span><b id="result-score-val">92%</b></div></div><div class="tabs"><button class="tab-btn active">Answer & Visual</button><button class="tab-btn">Execution Summary</button><button class="tab-btn">Model Details (Box 4)</button><button class="tab-btn">Download</button></div><div class="answer-layout"><article class="answer-card"><p>Yes, there is a significant increase in water coverage in the second image compared to the first. The highlighted areas show newly inundated regions.</p><div class="band-selector"><button class="band-btn active" data-band="optical">📡 Optical (Sentinel-2)</button><button class="band-btn" data-band="sar">⚡ SAR Thermal (Sentinel-1)</button><button class="band-btn" data-band="ndvi">🌱 NDVI Vegetation</button><button class="band-btn gradcam-btn" data-band="gradcam">🔥 Grad-CAM Heatmap (Box 4)</button></div><div class="before-after-slider" id="result-slider"><div class="slider-img before-img"><span>Before (Jan 2023)</span></div><div class="slider-img after-img"><span>After (Aug 2023)</span><div class="flood-mask"></div></div><div class="slider-divider"><div class="slider-handle">↔</div></div><input type="range" class="slider-range" min="0" max="100" value="50" aria-label="Compare satellite images" /></div><div class="legend"><i></i> Detected water increase <span class="delta-tag">+14.2 km² surface expansion</span></div><div class="multilabel-box"><h4>Box 4 Multi-Label Class Detection (Sigmoid Outputs)</h4><div class="class-row"><span>Inundated Water</span><div class="class-track"><div class="class-fill" style="width: 92%;"></div></div><b>92%</b></div><div class="class-row"><span>Built-Up / Urban</span><div class="class-track"><div class="class-fill" style="width: 78%;"></div></div><b>78%</b></div><div class="class-row"><span>Vegetation Cover</span><div class="class-track"><div class="class-fill" style="width: 41%;"></div></div><b>41%</b></div></div><div class="chart-box"><h4>Area Change Trend (sq km)</h4><div class="bar-chart"><div class="bar-group"><div class="bar-fill" style="--h: 35%;"><span>Jan: 12.4</span></div></div><div class="bar-group"><div class="bar-fill" style="--h: 52%;"><span>Apr: 18.1</span></div></div><div class="bar-group"><div class="bar-fill highlight" style="--h: 88%;"><span>Aug: 26.6</span></div></div></div></div></article><aside class="meta"><dl><div><dt>Specialist Model</dt><dd>Box 4 (Optical-SAR Dual-CNN)</dd></div><div><dt>Classifier Loss</dt><dd>Multi-Label Sigmoid (BCE)</dd></div><div><dt>Visual Evidence</dt><dd>Grad-CAM Spatial Activation</dd></div><div><dt>Training Data</dt><dd>ben-ge-8k (BigEarthNet-S2/S1)</dd></div><div><dt>Sensor Priority</dt><dd>Optical + SAR Co-registered</dd></div><div><dt>Output Contract</dt><dd>Text + Confidences + Overlay</dd></div></dl></aside></div><div class="result-actions"><button class="button outline" id="download">⇩ &nbsp; Download Report</button><button class="button mint" id="new-query">New Query</button></div></div>
+      </section>
+    </main>
+
+    <!-- WOW Telemetry Flight & AI Analysis Modal Overlay -->
+    <div class="wow-overlay" id="wow-overlay" aria-hidden="true">
+      <div class="wow-hud">
+        <div class="wow-topbar">
+          <div class="wow-brand"><span class="planet">◒</span> <b>SATQUERY INTELLIGENCE PIPELINE</b></div>
+          <div class="wow-status-badge" id="wow-status-badge">ORBITAL ACQUISITION ACTIVE</div>
+        </div>
+        <div class="wow-stage">
+          <div class="wow-map-stage" id="wow-map-stage">
+            <div class="wow-grid-layer"></div>
+            <div class="wow-sat-image" id="wow-sat-image"></div>
+            <div class="wow-target-pin" id="wow-target-pin">
+              <div class="radar-ring r1"></div>
+              <div class="radar-ring r2"></div>
+              <div class="pin-core"></div>
+              <div class="crosshair-h"></div>
+              <div class="crosshair-v"></div>
+              <div class="target-label" id="wow-target-label">ACQUIRING TARGET...</div>
+            </div>
+            <div class="wow-laser-beam" id="wow-laser-beam"></div>
+            <div class="wow-ai-nodes" id="wow-ai-nodes">
+              <div class="node n1"><i></i><span>Co-registered Optical+SAR</span></div>
+              <div class="node n2"><i></i><span>Box 4 Optical-SAR Fusion</span></div>
+              <div class="node n3"><i></i><span>Grad-CAM Spatial Activation</span></div>
+            </div>
+          </div>
+          <div class="wow-telemetry-panel">
+            <div class="wow-card">
+              <h3>📡 TELEMETRY STREAM</h3>
+              <div class="hud-coords" id="wow-coords-text">LAT: --.-° N | LON: --.-° E</div>
+              <div class="wow-progress-track"><div class="wow-progress-bar" id="wow-progress-bar"></div></div>
+              <div class="telemetry-steps" id="wow-steps-log">
+                <div class="step-item step-1"><span>01</span> Geocoding Target Coordinates...</div>
+                <div class="step-item step-2"><span>02</span> Fetching Co-registered Optical+SAR Pairs...</div>
+                <div class="step-item step-3"><span>03</span> Executing Box 4 Multi-Label Sigmoid Classifier...</div>
+                <div class="step-item step-4"><span>04</span> Generating Grad-CAM Activation Heatmap Overlay...</div>
+              </div>
+            </div>
+            <div class="wow-metrics">
+              <div class="m-box"><small>ORBIT ALT</small><b>687 KM</b></div>
+              <div class="m-box"><small>RESOLUTION</small><b>10M / PX</b></div>
+              <div class="m-box"><small>AI CONFIDENCE</small><b id="wow-live-conf">0%</b></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings Drawer -->
+    <div class="settings-backdrop" id="settings-backdrop"></div>
+    <aside class="settings-drawer" id="settings-drawer" aria-hidden="true">
+      <div class="drawer-head"><b>Settings & account</b><button id="close-settings" title="Close settings">×</button></div>
+      <div class="profile" id="drawer-profile-card">
+        <span class="profile-avatar user-avatar-target">P</span>
+        <div><b class="user-name-target">Priya Menon</b><span class="user-email-target">priya@example.com</span></div>
+        <i class="user-plan-badge-target">Pro Tier</i>
+      </div>
+      <div class="settings-list">
+        <button id="drawer-open-account"><span>◒</span><div><b>Account Profile</b><small>Profile, email and agency</small></div><em>›</em></button>
+        <button id="drawer-open-preferences"><span>◉</span><div><b>Subscription & Quotas</b><small>Active tier, limits and API tokens</small></div><em>›</em></button>
+        <button id="drawer-switch-persona"><span>👥</span><div><b>Switch Demo Persona</b><small>Priya (Pro), Aris (Enterprise), Guest</small></div><em>›</em></button>
+      </div>
+      <button class="logout" id="logout">Log out</button>
+    </aside>
+
+    <!-- Authentication Modal (Glassmorphism) -->
+    <div class="pipeline-modal auth-modal" id="auth-modal" aria-hidden="true">
+      <div class="pipeline-panel auth-panel">
+        <button class="close-modal" id="close-auth">×</button>
+        <p class="eyebrow">ACCESS EARTH INTELLIGENCE</p>
+        <h2>SatQuery <span>Authentication</span></h2>
+        <p class="pipeline-copy">Sign in to access specialized neural models, manage API credentials, and sync geospatial telemetry.</p>
+        
+        <div class="auth-tabs">
+          <button class="auth-tab-btn active" data-tab="demo">⚡ Demo Personas</button>
+          <button class="auth-tab-btn" data-tab="signin">Sign In</button>
+          <button class="auth-tab-btn" data-tab="signup">Create Account</button>
+        </div>
+
+        <!-- Tab 1: Demo Personas -->
+        <div class="auth-tab-content active" id="auth-tab-demo">
+          <p style="font-size:12px; color:#a9c6c3; margin:0 0 14px;">Select a verified geospatial analyst profile for instant access with active GPU telemetry:</p>
+          <div class="persona-grid" id="persona-list">
+            <div class="persona-card" data-persona="priya">
+              <div class="persona-avatar" style="background:linear-gradient(135deg, #184e42, #73cfb3);">P</div>
+              <div class="persona-info">
+                <b>Priya Menon</b>
+                <span>Senior Geospatial Analyst · NRSC</span>
+                <small>Pro Tier · 500 Queries/mo · Optical-SAR Unlocked</small>
+              </div>
+              <button class="persona-select-btn">Select Persona →</button>
+            </div>
+            <div class="persona-card" data-persona="aris">
+              <div class="persona-avatar" style="background:linear-gradient(135deg, #2b3a67, #496a81);">A</div>
+              <div class="persona-info">
+                <b>Dr. Aris Thorne</b>
+                <span>Lead Remote Sensing Scientist · Earth Observation Directorate</span>
+                <small>Enterprise Tier · Unlimited Swaps · LoRA + Fusion</small>
+              </div>
+              <button class="persona-select-btn">Select Persona →</button>
+            </div>
+            <div class="persona-card" data-persona="guest">
+              <div class="persona-avatar" style="background:linear-gradient(135deg, #5c6b73, #9db4c0);">G</div>
+              <div class="persona-info">
+                <b>Guest Analyst</b>
+                <span>Public Observer · Open Research Community</span>
+                <small>Free Tier · Standard Benchmarks</small>
+              </div>
+              <button class="persona-select-btn">Select Persona →</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Sign In -->
+        <div class="auth-tab-content" id="auth-tab-signin" style="display:none;">
+          <form class="auth-form" id="signin-form">
+            <div class="form-group">
+              <label for="signin-email">Email Address</label>
+              <input type="email" id="signin-email" placeholder="analyst@agency.gov" required />
+            </div>
+            <div class="form-group">
+              <label for="signin-password">Password</label>
+              <input type="password" id="signin-password" placeholder="••••••••••••" value="demo1234" required />
+            </div>
+            <div class="form-row" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+              <label style="font-size:12px; color:#a9c6c3; cursor:pointer; display:flex; align-items:center; gap:6px;"><input type="checkbox" checked /> Remember session</label>
+              <button type="button" class="link-btn" id="switch-to-demo-link" style="background:transparent; border:none; color:#85efd0; font-size:12px; cursor:pointer; text-decoration:underline;">Switch to 1-click demo</button>
+            </div>
+            <button type="submit" class="button mint auth-submit-btn" style="width:100%;">Sign In to Workspace</button>
+          </form>
+        </div>
+
+        <!-- Tab 3: Create Account -->
+        <div class="auth-tab-content" id="auth-tab-signup" style="display:none;">
+          <form class="auth-form" id="signup-form">
+            <div class="form-group">
+              <label for="signup-name">Full Name</label>
+              <input type="text" id="signup-name" placeholder="Dr. Maya Lin" required />
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" placeholder="maya.lin@orbital.org" required />
+            </div>
+            <div class="form-group">
+              <label for="signup-org">Organization / Agency</label>
+              <input type="text" id="signup-org" placeholder="Earth Monitoring Initiative" />
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" placeholder="Create a password" value="demo1234" required />
+            </div>
+            <button type="submit" class="button mint auth-submit-btn" style="width:100%;">Create Free Account</button>
+          </form>
+        </div>
+
+        <div class="auth-feedback" id="auth-feedback" style="display:none;"></div>
+      </div>
+    </div>
+
+    <!-- Account & Preferences Modal -->
+    <div class="pipeline-modal account-modal" id="account-modal" aria-hidden="true">
+      <div class="pipeline-panel account-panel">
+        <button class="close-modal" id="close-account">×</button>
+        <p class="eyebrow">SETTINGS & PREFERENCES</p>
+        <h2>Account <span>Configuration</span></h2>
+        <p class="pipeline-copy">Manage your geospatial analyst profile, access quotas, and orchestration tokens.</p>
+
+        <div class="auth-tabs account-tabs">
+          <button class="account-tab-btn active" data-tab="profile">Profile</button>
+          <button class="account-tab-btn" data-tab="quota">Plan & Quotas</button>
+          <button class="account-tab-btn" data-tab="apikey">API Key</button>
+        </div>
+
+        <!-- Tab 1: Profile -->
+        <div class="account-tab-content active" id="account-tab-profile">
+          <form class="account-form" id="profile-edit-form">
+            <div style="display:flex; align-items:center; gap:16px; margin-bottom:18px;">
+              <div class="account-avatar user-avatar-target" id="account-modal-avatar" style="width:52px; height:52px; font-size:20px;">P</div>
+              <div>
+                <b class="user-name-target" style="font-size:16px; display:block; color:#fff;">Priya Menon</b>
+                <span class="user-email-target" style="font-size:12px; color:#a9c6c3;">priya@example.com</span>
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="profile-name-input">Display Name</label>
+                <input type="text" id="profile-name-input" value="Priya Menon" required />
+              </div>
+              <div class="form-group">
+                <label for="profile-email-input">Email Address</label>
+                <input type="email" id="profile-email-input" value="priya@example.com" required />
+              </div>
+            </div>
+            <div class="form-row-2">
+              <div class="form-group">
+                <label for="profile-role-input">Role / Title</label>
+                <input type="text" id="profile-role-input" value="Senior Geospatial Analyst" />
+              </div>
+              <div class="form-group">
+                <label for="profile-org-input">Organization</label>
+                <input type="text" id="profile-org-input" value="National Remote Sensing Centre (NRSC)" />
+              </div>
+            </div>
+            <div style="display:flex; justify-content:flex-end; margin-top:16px;">
+              <button type="submit" class="button mint">Save Changes</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Tab 2: Plan & Quotas -->
+        <div class="account-tab-content" id="account-tab-quota" style="display:none;">
+          <div class="quota-container">
+            <div class="quota-header">
+              <div>
+                <span style="font-size:11px; text-transform:uppercase; color:#85efd0; letter-spacing:1px;">Active Tier</span>
+                <h3 class="user-plan-target" style="margin:4px 0 0; font-size:22px; color:#fff;">Pro Tier</h3>
+              </div>
+              <span class="plan-badge-pill">Active Verified</span>
+            </div>
+            <div class="quota-progress-section" style="margin:20px 0;">
+              <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:6px;">
+                <span style="color:#a9c6c3;">Monthly Query Allocation</span>
+                <b id="quota-used-text" style="color:#85efd0;">42 / 500 queries used</b>
+              </div>
+              <div class="quota-bar-track">
+                <div class="quota-bar-fill" id="quota-bar-fill" style="width: 8.4%;"></div>
+              </div>
+            </div>
+            <div class="specialist-access-box">
+              <small style="color:#a9c6c3; font-size:11px; font-weight:700; letter-spacing:1px; display:block; margin-bottom:10px;">UNLOCKED SPECIALIST ARCHITECTURES</small>
+              <div class="specialist-tags-list">
+                <span class="spec-pill active">✓ General VLM (Qwen2.5-VL Base)</span>
+                <span class="spec-pill active">✓ CDVQA LoRA Change Specialist</span>
+                <span class="spec-pill active">✓ Optical-SAR Fusion CNN (Grad-CAM)</span>
+                <span class="spec-pill active">✓ Compound Sequence Orchestration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: API Key -->
+        <div class="account-tab-content" id="account-tab-apikey" style="display:none;">
+          <div class="api-key-container">
+            <label style="font-size:12px; color:#a9c6c3; display:block; margin-bottom:8px;">SatQuery Personal Access Bearer Token</label>
+            <div class="key-input-row" style="display:flex; gap:10px; margin-bottom:14px;">
+              <input type="text" id="api-key-display" value="sq_live_9a87f12e4b3c7d6e" readonly style="flex:1; font-family:monospace; font-size:13px; background:rgba(0,0,0,0.4); border:1px solid rgba(133,239,208,0.3); color:#85efd0; padding:10px 14px; border-radius:8px;" />
+              <button class="button outline" id="copy-api-key-btn" style="white-space:nowrap;">📋 Copy Key</button>
+            </div>
+            <p style="font-size:12px; color:#8baaa7; line-height:1.5; margin:0 0 12px;">Use this token to query SatQuery AI models programmatically via Python or cURL:</p>
+            <pre style="background:#021517; padding:14px; border-radius:8px; font-size:11px; color:#95dfc7; overflow-x:auto; border:1px solid rgba(133,239,208,0.18); font-family:monospace; line-height:1.5;">curl -X POST http://127.0.0.1:8080/api/query \
+  -H "Authorization: Bearer <span id="api-key-snippet-token">sq_live_9a87f12e4b3c7d6e</span>" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "Did the buildings change?", "preset_id": "change_vqa"}'</pre>
+            <div style="display:flex; justify-content:flex-end; margin-top:14px;">
+              <button class="button outline" id="regen-api-key-btn" style="color:#f87171; border-color:rgba(248,113,113,0.4);">↻ Regenerate Token</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture & Technical Verification Modal -->
+    <div class="pipeline-modal" id="architecture-modal" aria-hidden="true" style="display:none;">
+      <div class="pipeline-panel" style="max-width: 720px; max-height: 90vh; overflow-y: auto;">
+        <button class="close-modal" id="close-architecture">×</button>
+        <p class="eyebrow">EDGE DEPLOYMENT & SCIENTIFIC BENCHMARKS</p>
+        <h2>SatQuery AI <span>Architecture & Verification</span></h2>
+        <p class="pipeline-copy">Engineered for air-gapped, field-deployed edge hardware under a strict 6GB VRAM budget (RTX 4050).</p>
+        
+        <div class="arch-section" style="margin-top: 18px;">
+          <h4 style="color:#85efd0; font-size:13px; margin-bottom:8px;">1. 6GB VRAM Allocation Budget (RTX 4050 Empirical Math)</h4>
+          <table style="width:100%; font-size:12px; border-collapse:collapse; background:rgba(255,255,255,0.03); border-radius:6px; overflow:hidden;">
+            <thead>
+              <tr style="background:rgba(134,241,207,0.1); color:#85efd0; text-align:left;">
+                <th style="padding:8px 12px;">Component</th>
+                <th style="padding:8px 12px;">Resident / Slot</th>
+                <th style="padding:8px 12px;">VRAM Footprint</th>
+              </tr>
+            </thead>
+            <tbody style="color:#cbd5e1;">
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:6px 12px;">Query Interpreter (Qwen3.5-2B NF4)</td><td style="padding:6px 12px;">Resident</td><td style="padding:6px 12px; font-weight:600; color:#85efd0;">1.45 GB</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:6px 12px;">Base VLM (Qwen2.5-VL-3B)</td><td style="padding:6px 12px;">Slot A (Zero-Swap with LoRA)</td><td style="padding:6px 12px; font-weight:600; color:#85efd0;">2.42 GB</td></tr>
+              <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td style="padding:6px 12px;">PyTorch Context Workspace</td><td style="padding:6px 12px;">Workspace Cache</td><td style="padding:6px 12px; font-weight:600; color:#85efd0;">1.20 GB</td></tr>
+              <tr style="background:rgba(134,241,207,0.05); font-weight:bold;"><td style="padding:8px 12px; color:#fff;">Total Active VRAM</td><td style="padding:8px 12px; color:#fff;">Safe Operating Window</td><td style="padding:8px 12px; color:#85efd0;">5.07 GB (≤ 5.64 GB Usable)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="arch-section" style="margin-top: 18px;">
+          <h4 style="color:#85efd0; font-size:13px; margin-bottom:8px;">2. Verified Empirical Benchmark Scores</h4>
+          <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;">
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(134,241,207,0.2); padding:12px; border-radius:8px; text-align:center;">
+              <small style="color:#94a3b8; font-size:10px; text-transform:uppercase;">CDVQA Change Detection</small>
+              <div style="font-size:20px; font-weight:bold; color:#85efd0; margin-top:4px;">72.5%</div>
+              <span style="font-size:10px; color:#64748b;">Fine-tuned Qwen LoRA</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(134,241,207,0.2); padding:12px; border-radius:8px; text-align:center;">
+              <small style="color:#94a3b8; font-size:10px; text-transform:uppercase;">BEN-GE-8K Flood Fusion</small>
+              <div style="font-size:20px; font-weight:bold; color:#85efd0; margin-top:4px;">91.2%</div>
+              <span style="font-size:10px; color:#64748b;">Optical-SAR Dual-CNN</span>
+            </div>
+            <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(134,241,207,0.2); padding:12px; border-radius:8px; text-align:center;">
+              <small style="color:#94a3b8; font-size:10px; text-transform:uppercase;">Weight Swap Latency</small>
+              <div style="font-size:20px; font-weight:bold; color:#85efd0; margin-top:4px;">0.0001s</div>
+              <span style="font-size:10px; color:#64748b;">Zero-Swap Weight Sharing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-section" style="margin-top: 18px;">
+          <h4 style="color:#85efd0; font-size:13px; margin-bottom:8px;">3. Verified Model Artifacts in Repository</h4>
+          <div style="font-size:11px; color:#cbd5e1; line-height:1.6; background:rgba(0,0,0,0.3); padding:10px 14px; border-radius:6px; border:1px solid rgba(255,255,255,0.06);">
+            <div>• <b>checkpoints/fusion_model.pt</b> (1.6 MB) — Trained PyTorch weights for Optical-SAR dual-branch CNN</div>
+            <div>• <b>checkpoints/qwen2.5-vl-cdvqa-lora/</b> (111 MB) — Trained PEFT LoRA adapter for bi-temporal change detection</div>
+            <div>• <b>scripts/model_lifecycle_manager.py</b> — 6GB single-slot VRAM policy & zero-swap weight sharing</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; display:flex; justify-content:flex-end; gap:10px;">
+          <a href="https://youtu.be/demo-link-placeholder" target="_blank" class="button mint" style="text-decoration:none; padding:8px 16px; font-size:12px; display:inline-flex; align-items:center; gap:6px;">
+            <span>▶ Watch 2-Min Edge GPU Video</span>
+          </a>
+          <button class="button outline" id="close-architecture-btn" style="padding:8px 16px; font-size:12px;">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Sheet -->
+    <div class="search-sheet" id="search-sheet" aria-hidden="true"><div class="search-card"><button class="close-search" id="close-search">×</button><label>Search your conversations</label><input placeholder="Search chats, places, or reports" autofocus /><div><small>RECENT</small><button>Flood exposure - Kozhikode</button><button>Deforestation near Munnar</button><button>Land cover - Bengaluru</button></div></div></div>
+    <div class="toast" id="toast"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js" integrity="sha512-oJ8QbaQThQoJZ7oEv+29jfPM6CcP+zUxh3PKJs1vyOhx0UraUrE7PQgeItu3dOuCJyrzWpoYMsVjkkPEBzbUqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/ScrollTrigger.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js?v=6003"></script>
+  </body>
+</html>

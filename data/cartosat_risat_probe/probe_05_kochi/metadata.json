@@ -1,0 +1,25 @@
+{
+  "sample_id": "probe_05_kochi",
+  "site_name": "Kochi Backwaters and Port, Kerala",
+  "coordinates": {
+    "lat": 9.9312,
+    "lon": 76.2673
+  },
+  "bbox": [
+    76.2373,
+    9.9012,
+    76.2973,
+    9.9612
+  ],
+  "domain": "maritime_port_water_body",
+  "is_proxy": true,
+  "optical_sensor": "ESRI World Imagery High-Res (Proxy for Cartosat-2S sub-meter optical)",
+  "sar_sensor": "Sentinel-1 / Calibrated C-band (Proxy for RISAT-1 C-band SAR)",
+  "proxy_rationale": "Real ISRO Cartosat-2S and RISAT data was inaccessible without institutional credentials from Bhoonidhi/Bhuvan.",
+  "vqa_question": "What is the dominant geographic feature and land cover in this scene?",
+  "ground_truth_vqa": "coastal water body and port infrastructure",
+  "ground_truth_fusion": [
+    "Marine waters",
+    "Coastal wetlands"
+  ]
+}

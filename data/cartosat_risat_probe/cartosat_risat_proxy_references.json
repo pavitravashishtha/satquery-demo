@@ -1,0 +1,42 @@
+{
+  "probe_01_assam": {
+    "question": "What is the dominant geographic feature and land cover in this scene?",
+    "answer": "river and floodplain wetland",
+    "fusion_classes": [
+      "Inland wetlands",
+      "Inland waters"
+    ]
+  },
+  "probe_02_chennai": {
+    "question": "What is the dominant geographic feature and land cover in this scene?",
+    "answer": "dense urban buildings and roads",
+    "fusion_classes": [
+      "Urban fabric",
+      "Industrial or commercial units"
+    ]
+  },
+  "probe_03_delhi": {
+    "question": "What is the dominant geographic feature and land cover in this scene?",
+    "answer": "urban infrastructure and commercial buildings",
+    "fusion_classes": [
+      "Urban fabric",
+      "Industrial or commercial units"
+    ]
+  },
+  "probe_04_munnar": {
+    "question": "What is the dominant geographic feature and land cover in this scene?",
+    "answer": "mountainous forest and vegetation",
+    "fusion_classes": [
+      "Broad-leaved forest",
+      "Complex cultivation patterns"
+    ]
+  },
+  "probe_05_kochi": {
+    "question": "What is the dominant geographic feature and land cover in this scene?",
+    "answer": "coastal water body and port infrastructure",
+    "fusion_classes": [
+      "Marine waters",
+      "Coastal wetlands"
+    ]
+  }
+}

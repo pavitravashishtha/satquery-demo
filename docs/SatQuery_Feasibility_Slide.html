@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SatQuery AI — Feasibility at a glance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #021215;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #e6f4f1;
+    }
+
+    /* 16:9 Widescreen Presentation Canvas */
+    .slide-canvas {
+      width: 1333px;
+      height: 750px;
+      background: radial-gradient(circle at 85% 15%, rgba(16, 185, 129, 0.12), transparent 45%),
+                  radial-gradient(circle at 15% 85%, rgba(13, 148, 136, 0.15), transparent 40%),
+                  #061f23;
+      border: 1px solid rgba(133, 239, 208, 0.25);
+      border-radius: 14px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.75);
+      padding: 28px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient Scanline overlay */
+    .slide-canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02) 50%, transparent 50%);
+      background-size: 100% 4px;
+      pointer-events: none;
+    }
+
+    /* HEADER */
+    .slide-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid rgba(133, 239, 208, 0.18);
+      padding-bottom: 10px;
+    }
+
+    .title-area h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .title-area h1 span.badge-pill {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: rgba(16, 185, 129, 0.2);
+      border: 1px solid #10b981;
+      color: #85efd0;
+      padding: 3px 9px;
+      border-radius: 20px;
+    }
+
+    .title-area p {
+      font-size: 12px;
+      color: #85efd0;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .meta-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: #729a95;
+      text-align: right;
+    }
+
+    /* ZONE 1: TOP ROW SCORE CARDS */
+    .top-scores-row {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .score-card {
+      background: rgba(11, 46, 51, 0.7);
+      border: 1px solid rgba(26, 77, 84, 0.8);
+      border-radius: 9px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      backdrop-filter: blur(8px);
+      transition: transform 0.2s ease;
+    }
+
+    .score-card .label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: #a0b9b6;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .score-card .val {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .score-card .val small {
+      font-size: 11px;
+      color: #729a95;
+      font-weight: 500;
+    }
+
+    .score-card .sub {
+      font-size: 8.5px;
+      color: #5d817d;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+
+    /* Highlighted 6th card */
+    .score-card.highlight {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(6, 31, 35, 0.9));
+      border: 2px solid #10b981;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.25);
+    }
+
+    .score-card.highlight .label {
+      color: #85efd0;
+    }
+
+    .score-card.highlight .val {
+      color: #85efd0;
+    }
+
+    .score-card.highlight .sub {
+      color: #34d399;
+      font-weight: 700;
+    }
+
+    /* ZONE 2: MIDDLE CHARTS */
+    .middle-charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .chart-box {
+      background: rgba(11, 46, 51, 0.55);
+      border: 1px solid rgba(26, 77, 84, 0.7);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+    }
+
+    .chart-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chart-box .chart-subtitle {
+      font-size: 10px;
+      color: #85efd0;
+      margin-top: 2px;
+      margin-bottom: 12px;
+    }
+
+    /* Middle-Left: Stacked Horizontal Bar */
+    .stacked-bar-wrapper {
+      margin-top: 4px;
+    }
+
+    .stacked-bar-container {
+      width: 100%;
+      height: 38px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(133, 239, 208, 0.2);
+      border-radius: 7px;
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-seg {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #ffffff;
+      border-right: 1px solid rgba(6, 31, 35, 0.8);
+      position: relative;
+      transition: opacity 0.2s;
+    }
+
+    .seg-interpreter {
+      width: 25.7%; /* 1.45 / 5.64 */
+      background: #186e64;
+    }
+
+    .seg-vision {
+      width: 42.9%; /* 2.42 / 5.64 */
+      background: #10b981;
+    }
+
+    .seg-workspace {
+      width: 21.3%; /* 1.20 / 5.64 */
+      background: #289196;
+    }
+
+    .seg-headroom {
+      width: 10.1%; /* 0.57 / 5.64 */
+      background: #50b4a0;
+      border-right: none;
+    }
+
+    .stacked-legend {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9.5px;
+      color: #a0b9b6;
+      margin-top: 8px;
+    }
+
+    .stacked-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .legend-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .chart-caption {
+      font-size: 10px;
+      font-style: italic;
+      color: #85efd0;
+      margin-top: 10px;
+      border-top: 1px dashed rgba(133, 239, 208, 0.2);
+      padding-top: 6px;
+    }
+
+    /* Middle-Right: Vertical Bar Chart */
+    .vertical-chart-area {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      height: 105px;
+      padding-top: 10px;
+      border-bottom: 1px solid rgba(133, 239, 208, 0.2);
+    }
+
+    .vbar-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      width: 20%;
+    }
+
+    .vbar-cost {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #a0b9b6;
+    }
+
+    .vbar-cost.accent {
+      color: #85efd0;
+      font-weight: 800;
+    }
+
+    .vbar-pillar {
+      width: 44px;
+      border-radius: 4px 4px 0 0;
+      background: #5a7376; /* neutral gray */
+      transition: height 0.4s ease;
+    }
+
+    .vbar-pillar.accent {
+      background: #10b981; /* accent color */
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+    }
+
+    .vbar-labels-row {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 6px;
+      font-size: 9.5px;
+      color: #a0b9b6;
+      text-align: center;
+    }
+
+    .vbar-labels-row div {
+      width: 20%;
+    }
+
+    .vbar-labels-row .accent {
+      color: #85efd0;
+      font-weight: 700;
+    }
+
+    /* ZONE 3: BOTTOM COMPARISON TABLE */
+    .table-zone {
+      margin-top: 14px;
+      background: rgba(11, 46, 51, 0.6);
+      border: 1px solid rgba(26, 77, 84, 0.8);
+      border-radius: 9px;
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 7px 12px;
+      font-size: 11px;
+    }
+
+    thead th {
+      background: #09262b;
+      color: #ffffff;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(133, 239, 208, 0.2);
+    }
+
+    thead th.col-proposed {
+      background: rgba(16, 80, 70, 0.95);
+      color: #85efd0;
+      font-weight: 800;
+      border-left: 1px solid rgba(16, 185, 129, 0.3);
+      border-right: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid rgba(26, 77, 84, 0.45);
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background: rgba(6, 26, 29, 0.4);
+    }
+
+    td.feature-name {
+      font-weight: 600;
+      color: #e6f4f1;
+    }
+
+    td.col-proposed {
+      background: rgba(12, 50, 48, 0.75);
+      color: #85efd0;
+      font-weight: 700;
+      text-align: center;
+      border-left: 1px solid rgba(16, 185, 129, 0.2);
+      border-right: 1px solid rgba(16, 185, 129, 0.2);
+    }
+
+    td.col-comp {
+      text-align: center;
+      color: #a0b9b6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slide-canvas">
+    
+    <!-- HEADER -->
+    <header class="slide-header">
+      <div class="title-area">
+        <h1>SatQuery AI — Feasibility at a glance <span class="badge-pill">Pitch Deck Slide</span></h1>
+        <p>Pre-Implementation Architecture Targets & Comparative Feasibility Projection</p>
+      </div>
+      <div class="meta-tag">
+        HARDWARE CEILING: 6GB VRAM<br>
+        STATUS: PROPOSED SYSTEM
+      </div>
+    </header>
+
+    <!-- ZONE 1: TOP 6 SCORE CARDS -->
+    <section class="top-scores-row">
+      <div class="score-card">
+        <div class="label">Technical Feasibility</div>
+        <div class="val">9.5 <small>/ 10</small></div>
+        <div class="sub">Target Projection</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Compute & Hardware</div>
+        <div class="val">10.0 <small>/ 10</small></div>
+        <div class="sub">Target Projection</div>
+      </div>
+      <div class="score-card">
+        <div class="label">RS & Data</div>
+        <div class="val">8.5 <small>/ 10</small></div>
+        <div class="sub">Target Projection</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Economic Viability</div>
+        <div class="val">9.5 <small>/ 10</small></div>
+        <div class="sub">Target Projection</div>
+      </div>
+      <div class="score-card">
+        <div class="label">Market Fit</div>
+        <div class="val">9.0 <small>/ 10</small></div>
+        <div class="sub">Target Projection</div>
+      </div>
+      <!-- Distinct 6th highlighted card -->
+      <div class="score-card highlight">
+        <div class="label">Overall Target</div>
+        <div class="val">9.3 <small>/ 10</small></div>
+        <div class="sub">Composite Goal</div>
+      </div>
+    </section>
+
+    <!-- ZONE 2: MIDDLE CHARTS -->
+    <section class="middle-charts-row">
+      
+      <!-- MIDDLE-LEFT: Horizontal Stacked Bar -->
+      <article class="chart-box">
+        <div>
+          <h3>Projected VRAM budget (6GB target)</h3>
+          <div class="chart-subtitle">Total Memory Axis Capped at 5.64 GB (Usable RTX 4050 Ceiling)</div>
+        </div>
+
+        <div class="stacked-bar-wrapper">
+          <div class="stacked-bar-container">
+            <div class="bar-seg seg-interpreter" title="Interpreter: 1.45GB">1.45GB</div>
+            <div class="bar-seg seg-vision" title="Vision model: 2.42GB">2.42GB</div>
+            <div class="bar-seg seg-workspace" title="Workspace: 1.20GB">1.20GB</div>
+            <div class="bar-seg seg-headroom" title="Headroom: 0.57GB">0.57GB</div>
+          </div>
+          <div class="stacked-legend">
+            <span><i class="legend-dot" style="background:#186e64;"></i> Interpreter (1.45GB)</span>
+            <span><i class="legend-dot" style="background:#10b981;"></i> Vision model (2.42GB)</span>
+            <span><i class="legend-dot" style="background:#289196;"></i> Workspace (1.20GB)</span>
+            <span><i class="legend-dot" style="background:#50b4a0;"></i> Headroom (0.57GB)</span>
+          </div>
+        </div>
+
+        <div class="chart-caption">
+          Caption: "Projected from published model sizes — not yet a measured run."
+        </div>
+      </article>
+
+      <!-- MIDDLE-RIGHT: Vertical Bar Chart -->
+      <article class="chart-box">
+        <div>
+          <h3>Projected monthly compute cost</h3>
+          <div class="chart-subtitle">Continuous 24/7 Hosting Comparison (USD/month projection)</div>
+        </div>
+
+        <div class="vertical-chart-area">
+          <div class="vbar-col">
+            <span class="vbar-cost">$2,642</span>
+            <div class="vbar-pillar" style="height: 84px;"></div>
+          </div>
+          <div class="vbar-col">
+            <span class="vbar-cost">$1,350</span>
+            <div class="vbar-pillar" style="height: 48px;"></div>
+          </div>
+          <div class="vbar-col">
+            <span class="vbar-cost">$201</span>
+            <div class="vbar-pillar" style="height: 12px;"></div>
+          </div>
+          <div class="vbar-col">
+            <span class="vbar-cost accent">$0 Target</span>
+            <div class="vbar-pillar accent" style="height: 4px;"></div>
+          </div>
+        </div>
+
+        <div class="vbar-labels-row">
+          <div>A100 server</div>
+          <div>Multi-API</div>
+          <div>Cloud micro</div>
+          <div class="accent">Local edge<br>(proposed)</div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ZONE 3: BOTTOM COMPARISON TABLE -->
+    <section class="table-zone">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 28%;">Capability / Dimension</th>
+            <th class="col-proposed" style="width: 20%;">SatQuery AI (proposed)</th>
+            <th class="col-comp" style="width: 17%;">GPT-4o / Gemini 1.5</th>
+            <th class="col-comp" style="width: 17%;">Prithvi-100M (NASA)</th>
+            <th class="col-comp" style="width: 18%;">EarthGPT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="feature-name">Runs on 6GB laptop GPU</td>
+            <td class="col-proposed">Target: yes</td>
+            <td class="col-comp">No (Cloud API)</td>
+            <td class="col-comp">Backbone only</td>
+            <td class="col-comp">No (≥24GB)</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Raw SAR ingestion</td>
+            <td class="col-proposed">Target: yes</td>
+            <td class="col-comp">No</td>
+            <td class="col-comp">Limited</td>
+            <td class="col-comp">No</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Bitemporal change VQA</td>
+            <td class="col-proposed">Target: yes</td>
+            <td class="col-comp">Unreliable</td>
+            <td class="col-comp">Detection only</td>
+            <td class="col-comp">Uncalibrated</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Explainable evidence</td>
+            <td class="col-proposed">Target: yes</td>
+            <td class="col-comp">No</td>
+            <td class="col-comp">No</td>
+            <td class="col-comp">Limited</td>
+          </tr>
+          <tr>
+            <td class="feature-name">Offline / air-gapped</td>
+            <td class="col-proposed">Target: yes</td>
+            <td class="col-comp">No</td>
+            <td class="col-comp">Yes</td>
+            <td class="col-comp">No</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </div>
+
+</body>
+</html>
