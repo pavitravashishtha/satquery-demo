@@ -1370,7 +1370,7 @@ def handle_query():
                 f"**Identified Sensor Modalities:** {sensors_disp} (10m Ground Sample Distance)\n"
                 f"**Specialist Pipeline Execution:** {' ➔ '.join(effective_tasks)}\n\n"
                 f"> ⚠️ **Public Cloud Preview Notice:**\n"
-                f"> This public prototype runs on a lightweight zero-GPU cloud evaluation node. Full real-time neural specialist execution (Qwen2.5-VL-3B LoRA + Optical-SAR Dual-CNN) under our 6GB VRAM budget on consumer edge hardware (NVIDIA RTX 4050) is demonstrated in our [System Demo Video](https://youtu.be/demo-link-placeholder).\n\n"
+                f"> This public prototype runs on a lightweight zero-GPU cloud evaluation node. Full real-time neural specialist execution (Qwen2.5-VL-3B LoRA + Optical-SAR Dual-CNN) under our 6GB VRAM budget on consumer edge hardware (NVIDIA RTX 4050) is demonstrated in our [System Demo Video](https://youtu.be/4VfqViYAwJ8?si=SWgOBt213bhzTTXT).\n\n"
                 f"Please test the verified benchmark scenarios above to explore real Grad-CAM heatmaps, split-screen sliders, and telemetry HUD."
             )
             

@@ -23,7 +23,7 @@
 > * 🌐 **Interactive Cloud Demo (Hugging Face Space):** [huggingface.co/spaces/pavi-07/satquery](https://huggingface.co/spaces/pavi-07/satquery) *(Interactive UI & verified benchmark presets)*
 > * 🧠 **Trained LoRA Weights & Model Card (Hugging Face Hub):** [huggingface.co/pavi-07/satquery-cdvqa-lora](https://huggingface.co/pavi-07/satquery-cdvqa-lora) *(Custom PEFT adapter weights & model card)*
 > * 💻 **Open-Source Codebase (GitHub):** [github.com/pavitravashishtha/satquery-demo](https://github.com/pavitravashishtha/satquery-demo) *(Full architecture, specialists & VRAM lifecycle)*
-> * 🎥 **Edge Hardware Video Demo:** [2-Minute RTX 4050 Execution & VRAM Telemetry](https://youtu.be/demo-link-placeholder) *(Live screen capture showing real-time inference & dynamic model swapping)*
+> * 🎥 **Full Dashboard & Concept Walkthrough:** [SatQuery AI End-to-End Walkthrough — Core Concept, Architectural Advantages & Live Dashboard Demo](https://youtu.be/4VfqViYAwJ8?si=SWgOBt213bhzTTXT) *(All-in-one demonstration covering Earth Observation concepts, edge computing advantages, multi-sensor features, and full dashboard walkthrough)*
 
 ---
 
@@ -36,7 +36,7 @@
 > 2. **12 GB Data & Model Footprint vs. 100 MB Cloud Limits:** The full local development pipeline occupies ~12 GB (4 GB unquantized base VLM weights + 6.5 GB raw Sentinel/Cartosat GeoTIFF tiles). Cloud platforms enforce 100 MB per-file limits and paywall containerized GPU/Docker runners.
 > 3. **Infrastructure Cost:** Hosting monolithic multimodal models on cloud GPUs (A10G/T4/A100) costs $50–$300+/month. SatQuery AI delivers **zero cloud operating cost** by running locally on standard 6GB edge GPUs.
 > 
-> *Full end-to-end execution, dynamic memory swapping, and sub-5.7GB VRAM residency are independently verified through our open-source codebase and our uncut 2-minute edge GPU terminal video demo.*
+> *Full end-to-end execution, dynamic memory swapping, and sub-5.7GB VRAM residency are independently verified through our open-source codebase and our [comprehensive system and dashboard video demonstration](https://youtu.be/4VfqViYAwJ8?si=SWgOBt213bhzTTXT).*
 
 ---
 
@@ -289,7 +289,7 @@ During research and development, the complete SatQuery AI workspace occupies **1
 | **Model Weights** | Full base Qwen2.5-VL + LoRA + Fusion CNN in VRAM | Trained checkpoints included; instant verified benchmarks |
 | **Query Execution** | Real-time neural inference under 6GB VRAM ceiling | Instant verified benchmarks + live query planning & geocoding |
 | **Disaster Response** | **100% Offline & Air-Gapped (Field Operational)** | Online interactive preview for hackathon judges |
-| **Demonstration** | **Demonstrated in 2-Minute Technical Video** | **Accessible via Live Web Prototype Link** |
+| **Demonstration** | **Demonstrated in [Comprehensive Video Walkthrough](https://youtu.be/4VfqViYAwJ8?si=SWgOBt213bhzTTXT)** | **Accessible via Live Web Prototype Link** |
 
 ---
 
