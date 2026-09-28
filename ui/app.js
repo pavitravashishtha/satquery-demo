@@ -131,18 +131,14 @@ function initScrollTrigger() {
   };
 
   const stopWaterfallLoop = () => {
-    if (!isLoopingWaterfall) return;
     isLoopingWaterfall = false;
     if (loopAnimationFrameId) {
       cancelAnimationFrame(loopAnimationFrameId);
       loopAnimationFrameId = null;
     }
     const bgVid = document.getElementById('workspace-bg-video');
-    const cvs = document.getElementById('hero-canvas');
     if (bgVid) {
-      bgVid.pause();
-      bgVid.style.display = 'none';
-      if (cvs) cvs.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
   };
 
@@ -150,34 +146,53 @@ function initScrollTrigger() {
   globalStopWaterfallLoop = stopWaterfallLoop;
   globalRenderFrameZero = () => {
     const bgVid = document.getElementById('workspace-bg-video');
-    const cvs = document.getElementById('hero-canvas');
     if (bgVid) {
-      bgVid.pause();
-      bgVid.style.display = 'none';
-      if (cvs) cvs.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
     sequence.frame = 0;
     render();
   };
 
-  // Preload all 673 frames safely with immediate render on load/cache
-  for (let i = 0; i < frameCount; i++) {
-    const img = new Image();
-    images[i] = img;
-    img.onload = () => {
-      if (i === 0 || Math.round(sequence.frame) === i) {
-        resizeCanvas();
-        render();
-      }
-    };
-    img.src = currentFramePath(i);
-    if (img.complete) {
-      if (i === 0 || Math.round(sequence.frame) === i) {
-        resizeCanvas();
-        render();
-      }
+  // On cloud static spaces, skip 673 frame probing to eliminate all 404 network lag
+  if (window.location.hostname.includes('static.hf.space') || window.location.hostname.includes('huggingface.co')) {
+    const bgVid = document.getElementById('workspace-bg-video');
+    const cvs = document.getElementById('hero-canvas');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.style.opacity = '1';
+      bgVid.play().catch(() => {});
     }
+    if (cvs) cvs.style.display = 'none';
+    return;
   }
+  const probe = new Image();
+  probe.onload = () => {
+    const cvs = document.getElementById('hero-canvas');
+    if (cvs) { cvs.style.display = 'block'; cvs.style.opacity = '1'; }
+    for (let i = 0; i < frameCount; i++) {
+      const img = new Image();
+      images[i] = img;
+      img.onload = () => {
+        if (i === 0 || Math.round(sequence.frame) === i) {
+          resizeCanvas();
+          render();
+        }
+      };
+      img.src = currentFramePath(i);
+    }
+  };
+  probe.onerror = () => {
+    // Zero-lag cloud mode: no 673 failed requests, hardware video provides continuous 60fps motion
+    const bgVid = document.getElementById('workspace-bg-video');
+    const cvs = document.getElementById('hero-canvas');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.style.opacity = '1';
+      bgVid.play().catch(() => {});
+    }
+    if (cvs) cvs.style.display = 'none';
+  };
+  probe.src = currentFramePath(0);
 
   window.addEventListener('resize', resizeCanvas);
   resizeCanvas();
@@ -1309,17 +1324,46 @@ async function submitChat() {
       }
     }
 
-    const response = await fetch('/api/query', {
-      method: 'POST',
-      body: formData,
-    });
-
-    if (!response.ok) {
-      const errJson = await response.json().catch(() => ({}));
-      throw new Error(errJson.error || `Server error (${response.status})`);
+    let resData = null;
+    try {
+      const response = await fetch('/api/query', {
+        method: 'POST',
+        body: formData,
+      });
+      if (response.ok) {
+        resData = await response.json();
+      }
+    } catch (netErr) {
+      // Backend not running (Hugging Face Static Space mode)
     }
 
-    const resData = await response.json();
+    if (!resData) {
+      if (activePresetId && window.SATQUERY_PRESETS && window.SATQUERY_PRESETS[activePresetId]) {
+        resData = JSON.parse(JSON.stringify(window.SATQUERY_PRESETS[activePresetId]));
+      } else {
+        const pLower = prompt.toLowerCase();
+        let matchedPreset = 'fusion';
+        if (pLower.includes('change') || pLower.includes('before') || pLower.includes('after') || pLower.includes('expansion')) {
+          matchedPreset = 'change_vqa';
+        } else if (pLower.includes('flood') || pLower.includes('sar') || pLower.includes('radar') || pLower.includes('water')) {
+          matchedPreset = 'fusion';
+        } else if (pLower.includes('building') || pLower.includes('locate') || pLower.includes('box')) {
+          matchedPreset = 'grounding';
+        } else if (pLower.includes('describe') || pLower.includes('caption')) {
+          matchedPreset = 'captioning';
+        } else if (pLower.includes('compound') || pLower.includes('both')) {
+          matchedPreset = 'compound';
+        } else {
+          matchedPreset = 'vqa';
+        }
+
+        if (window.SATQUERY_PRESETS && window.SATQUERY_PRESETS[matchedPreset]) {
+          resData = JSON.parse(JSON.stringify(window.SATQUERY_PRESETS[matchedPreset]));
+          resData.query = prompt;
+          if (place) resData.location = place;
+        }
+      }
+    }
 
     finishFlight(resData, () => {
       renderAiResult(aiMsg, prompt, place, resData);
@@ -1352,6 +1396,22 @@ let authToken = localStorage.getItem('satquery_token') || 'demo_token_priya';
 
 async function initAuth() {
   try {
+    if (window.location.hostname.includes('static.hf.space') || window.location.hostname.includes('huggingface.co')) {
+      applyUserSession({
+        id: 'priya',
+        name: 'Priya Menon',
+        email: 'priya@example.com',
+        role: 'Senior Geospatial Analyst',
+        organization: 'National Remote Sensing Centre (NRSC)',
+        plan: 'Pro Tier',
+        avatar: 'P',
+        avatar_bg: 'linear-gradient(135deg, #184e42, #73cfb3)',
+        api_key: 'sq_live_9a87f12e4b3c7d6e',
+        queries_limit: 500,
+        queries_used: 42
+      });
+      return;
+    }
     const res = await fetch('/api/auth/user', {
       headers: {
         'Authorization': `Bearer ${authToken}`
@@ -2026,10 +2086,16 @@ function initIntroVideo() {
       video.pause();
     } catch (e) {}
 
+    const bgVid = document.getElementById('workspace-bg-video');
+    if (bgVid) {
+      bgVid.style.display = 'block';
+      bgVid.play().catch(() => {});
+    }
+
     if (typeof gsap !== 'undefined') {
       gsap.to(overlay, {
         opacity: 0,
-        duration: 0.65,
+        duration: 0.5,
         ease: 'power2.inOut',
         onComplete: () => {
           overlay.classList.add('hidden');
@@ -2040,9 +2106,14 @@ function initIntroVideo() {
       overlay.classList.add('hidden');
       setTimeout(() => {
         overlay.style.display = 'none';
-      }, 650);
+      }, 500);
     }
   };
+
+  // Safety fallback: auto-transition after 8.5s if not skipped
+  setTimeout(() => {
+    if (!hasDismissed) dismissIntro();
+  }, 8500);
 
   if (soundBtn) {
     soundBtn.addEventListener('click', (e) => {
