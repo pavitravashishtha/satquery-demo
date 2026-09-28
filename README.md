@@ -20,8 +20,8 @@
 ---
 
 > ### 🛰️ Live Verification Links (SIH 2026 Evaluation Triad)
-> * 🌐 **Interactive Cloud Demo (Hugging Face Space):** [huggingface.co/spaces/pavi-07/satquery-demo](https://huggingface.co/spaces/pavi-07/satquery-demo) *(Interactive UI & verified benchmark presets)*
-> * 🧠 **Trained LoRA Weights & Model Card (Hugging Face Hub):** [huggingface.co/pavi-07/qwen2.5-vl-cdvqa-lora](https://huggingface.co/pavi-07/qwen2.5-vl-cdvqa-lora) *(Custom PEFT adapter weights & model card)*
+> * 🌐 **Interactive Cloud Demo (Hugging Face Space):** [huggingface.co/spaces/pavi-07/satquery](https://huggingface.co/spaces/pavi-07/satquery) *(Interactive UI & verified benchmark presets)*
+> * 🧠 **Trained LoRA Weights & Model Card (Hugging Face Hub):** [huggingface.co/pavi-07/satquery-cdvqa-lora](https://huggingface.co/pavi-07/satquery-cdvqa-lora) *(Custom PEFT adapter weights & model card)*
 > * 💻 **Open-Source Codebase (GitHub):** [github.com/pavitravashishtha/satquery-demo](https://github.com/pavitravashishtha/satquery-demo) *(Full architecture, specialists & VRAM lifecycle)*
 > * 🎥 **Edge Hardware Video Demo:** [2-Minute RTX 4050 Execution & VRAM Telemetry](https://youtu.be/demo-link-placeholder) *(Live screen capture showing real-time inference & dynamic model swapping)*
 
